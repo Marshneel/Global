@@ -7,6 +7,8 @@ Individual tests can be run from SwagLab_Tests Class
 To run all tests and generate execution report, run testng.xml file
 The execution report will be generated in test-output folder in html format
 
+Maven Command to run all tests: mvn test -PRegression
+
 Please Note: In order to fix chrome unsafe issue in Mac, the ChromeDriver installation code has been slightly modified in BaseClass
 If you face any issues, kindly de-comment System.setPropertery line in BaseClass.initialization method 
 

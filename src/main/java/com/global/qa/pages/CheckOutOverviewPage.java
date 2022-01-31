@@ -1,7 +1,6 @@
 package com.global.qa.pages;
 
 import com.global.qa.support.BaseClass;
-import com.global.qa.support.ElementsUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

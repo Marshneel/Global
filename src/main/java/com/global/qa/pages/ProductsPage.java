@@ -20,6 +20,17 @@ public class ProductsPage extends BaseClass {
     @FindBy(xpath = "//span[@class='shopping_cart_badge']")
     WebElement CART_ITEMS_NUMBER;
 
+    @FindBy(xpath = "//button[@class='btn btn_primary btn_small btn_inventory']")
+    List<WebElement> ADD_TO_CART_BUTTONS;
+
+    @FindBy(xpath = "//button[@class='btn btn_secondary btn_small btn_inventory']")
+    List<WebElement> REMOVE_BUTTONS;
+
+    @FindBy(xpath = "//div[@class='inventory_list']/div")
+    List<WebElement> INVENTORY_LIST;
+
+
+
     public ProductsPage() {
         PageFactory.initElements(driver, this);
     }
@@ -30,20 +41,20 @@ public class ProductsPage extends BaseClass {
     }
 
     public void selectCheapestItem(){
-        driver.findElements(By.xpath("//div[@class='inventory_list']/div //button")).get(0).click();
-        Assert.assertEquals(driver.findElements(By.xpath("//div[@class='inventory_list']/div //button")).get(0).getText(),"REMOVE");
+
+        ADD_TO_CART_BUTTONS.get(0).click();
+        Assert.assertEquals(REMOVE_BUTTONS.get(0).getText(),"REMOVE");
+
     }
 
     public void selectSecondCostliestItem(){
-        List<WebElement> items = driver.findElements(By.xpath("//div[@class='inventory_list']/div"));
-        for(int i=0;i<items.size();i++){
-            if(i== (items.size()-2)){
+
+        for(int i=0;i<INVENTORY_LIST.size();i++){
+            if(i== (INVENTORY_LIST.size()-2)) {
                 driver.findElements(By.xpath("//div[@class='inventory_list']/div //button")).get(i).click();
                 Assert.assertEquals(driver.findElements(By.xpath("//div[@class='inventory_list']/div //button")).get(i).getText(),"REMOVE");
-
+                 }
             }
-
-        }
 
     }
 

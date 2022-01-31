@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Zopa">
+<suite name="Global">
     <listeners>
         <listener class-name="com.global.qa.logging.SeleniumTestListener" />
     </listeners>
-    <test verbose="2" preserve-order="true" name="Zopa">
+    <test verbose="2" preserve-order="true" name="Global">
         <classes>
             <class name="com.global.qa.TestCases.SwagLab_Tests"/>
         </classes>
